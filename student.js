@@ -6,7 +6,8 @@ import {
   getFirestore,
   doc,
   getDoc,
-  updateDoc
+  updateDoc,
+  deleteDoc
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -217,3 +218,46 @@ createStudentBtn.addEventListener("click", async () => {
 });
 
 loadStudent();
+// ================================
+// ARCHIVE STUDENT
+// ================================
+
+const archiveStudent = document.getElementById("archiveStudent");
+
+archiveStudent.addEventListener("click", async () => {
+
+    if (!confirm("Archive this student?")) return;
+
+    await updateDoc(
+        doc(db, "bookings", studentId),
+        {
+            status: "archived"
+        }
+    );
+
+    alert("Student archived.");
+
+    window.location.href = "admin.html";
+
+});
+
+
+// ================================
+// DELETE STUDENT
+// ================================
+
+const deleteStudent = document.getElementById("deleteStudent");
+
+deleteStudent.addEventListener("click", async () => {
+
+    if (!confirm("Delete this student permanently?")) return;
+
+    await deleteDoc(
+        doc(db, "bookings", studentId)
+    );
+
+    alert("Student deleted.");
+
+    window.location.href = "admin.html";
+
+});
