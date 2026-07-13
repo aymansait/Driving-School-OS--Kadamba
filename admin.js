@@ -115,7 +115,7 @@ if (globalSearch) {
     const searchTerm = e.target.value.toLowerCase();
     const cards = document.querySelectorAll(".bookingCard");
     cards.forEach(card => {
-      const searchData = card.getAttribute("data-search") || "";
+      const searchData = (card.getAttribute("data-search") || "").toLowerCase();
       card.style.display = searchData.includes(searchTerm) ? "flex" : "none";
     });
   });
@@ -179,7 +179,7 @@ async function renderEnquiries() {
     if (booking.status !== "enquiry") return;
     enquiryCount++;
     bookingList.innerHTML += `
-      <div class="bookingCard" data-search="${booking.name} ${booking.phone}">
+      <div class="bookingCard" data-search="${booking.name.toLowerCase()} ${booking.phone}">
         <div class="bookingInfo"><h3>${booking.name}</h3><p>${booking.phone}</p></div>
         <div class="buttonRow">
           <button class="contactBtn" data-id="${document.id}">Admit</button>
@@ -214,25 +214,49 @@ async function renderStudents() {
   
   snap.forEach(document => {
     const student = document.data();
+
     if (student.status !== "student") return;
+
     count++;
+
     bookingList.innerHTML += `
-      <div class="bookingCard" data-search="${student.name} ${student.phone}">
+      <div class="bookingCard" data-search="${student.name.toLowerCase()} ${student.phone}">
         <div class="bookingInfo">
           <h3>${student.name}</h3>
           <p>📞 ${student.phone}</p>
         </div>
+
         <div class="buttonRow">
-          <button class="viewProfileBtn" data-id="${document.id}">View Profile</button>
-        </div>
+
+  <button class="viewProfileBtn" data-id="${document.id}">
+    View Profile
+  </button>
+
+</div>
+
       </div>`;
-  });
+});
   
   bookingCount.textContent = count;
   
   document.querySelectorAll(".viewProfileBtn").forEach(btn => {
     btn.onclick = () => window.location.href = `student.html?id=${btn.dataset.id}`;
   });
+  document.querySelectorAll(".deleteStudentBtn").forEach(btn => {
+
+    btn.onclick = async () => {
+
+        if (!confirm("Delete this student?")) return;
+
+        await deleteDoc(
+            doc(db, "bookings", btn.dataset.id)
+        );
+
+        renderStudents();
+
+    };
+
+});
 }
 
 async function renderLessonRequests() {
