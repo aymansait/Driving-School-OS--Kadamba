@@ -1,0 +1,327 @@
+/* ==========================================
+   RESET
+========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0B0F14;
+  --card: #141B24;
+  --border: rgba(255, 255, 255, .06);
+  --text: #FFFFFF;
+  --muted: #94A3B8;
+  --green: #22C55E;
+  --greenDark: #16A34A;
+  --blue: #2563EB;
+  --blueDark: #1D4ED8;
+  --orange: #F59E0B;
+  --orangeDark: #D97706;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================
+   PAGE
+========================================== */
+.profilePage {
+  width: min(900px, 92%);
+  margin: 40px auto;
+}
+
+/* ==========================================
+   BRAND & BACK BUTTON
+========================================== */
+.brandHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.brandTop {
+  position: relative; /* Allows absolute positioning for the arrow */
+  display: flex;
+  justify-content: center; /* Perfectly centers the brand text */
+  width: 100%;
+}
+
+.brandText {
+  text-align: center;
+}
+
+.brandHeader h1 {
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.brandHeader p {
+  color: var(--muted);
+}
+
+/* Minimal Inline Back Arrow */
+#backButton {
+  position: absolute;
+  left: 0; /* Aligns perfectly with the left edge of the cards below */
+  top: 2px; /* Aligns vertically with the crossbar of the 'K' */
+  width: auto;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 28px;
+  font-weight: normal;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#backButton:hover {
+  background: transparent;
+  color: var(--text);
+  transform: translateX(-4px); /* Native slide-left feel */
+}
+
+/* ==========================================
+   STUDENT HEADER
+========================================== */
+.profileHeader {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.studentPhoto {
+  margin-bottom: 20px;
+}
+
+.studentPhoto img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #2C3948;
+}
+
+.profileHeader h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+/* ==========================================
+   STUDENT INFO
+========================================== */
+.studentInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.studentInfo p {
+  background: #1C2530;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.studentInfo strong {
+  display: block;
+  margin-bottom: 6px;
+  color: white;
+}
+
+.studentInfo span {
+  color: var(--muted);
+  word-break: break-word;
+}
+
+.infoRow {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.infoLabel {
+  min-width: 120px;
+  color: var(--muted);
+}
+
+.separator {
+  color: var(--muted);
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+.profileCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+}
+
+.profileCard h2 {
+  margin-bottom: 18px;
+}
+
+.profileCard h3 {
+  margin: 20px 0 10px;
+}
+
+/* ==========================================
+   PROGRESS
+========================================== */
+.progressBar {
+  width: 100%;
+  height: 18px;
+  background: #202A36;
+  border-radius: 100px;
+  overflow: hidden;
+  margin: 18px 0;
+}
+
+.progressFill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--greenDark));
+  transition: 0.35s;
+}
+
+/* ==========================================
+   PAYMENT
+========================================== */
+#paymentStatus {
+  color: #FBBF24;
+}
+
+/* ==========================================
+   NOTES
+========================================== */
+textarea {
+  width: 100%;
+  min-height: 170px;
+  background: #1C2530;
+  color: white;
+  border: 1px solid #2E3948;
+  border-radius: 14px;
+  padding: 16px;
+  resize: vertical;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+button {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+#editStudent {
+  background: var(--blue);
+  color: white;
+}
+
+#editStudent:hover {
+  background: var(--blueDark);
+}
+
+#completeLesson {
+  background: var(--green);
+  color: white;
+  margin-top: 20px;
+}
+
+#completeLesson:hover {
+  background: var(--greenDark);
+}
+
+#saveNotes {
+  background: var(--blue);
+  color: white;
+}
+
+#saveNotes:hover {
+  background: var(--blueDark);
+}
+
+#recordPayment {
+  background: var(--orange);
+  color: white;
+  margin-top: 18px;
+}
+
+#recordPayment:hover {
+  background: var(--orangeDark);
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+@media(max-width: 768px) {
+  .profilePage {
+    width: 92%;
+    margin: 25px auto;
+  }
+  .brandHeader h1 {
+    font-size: 1.8rem;
+  }
+  .profileHeader {
+    padding: 22px;
+  }
+  .studentPhoto img {
+    width: 95px;
+    height: 95px;
+  }
+  .profileHeader h2 {
+    font-size: 1.6rem;
+  }
+  .studentInfo {
+    grid-template-columns: 1fr;
+  }
+  .profileCard {
+    padding: 22px;
+  }
+  #backButton {
+    top: 0; /* Slight adjustment for mobile font sizing */
+  }
+}

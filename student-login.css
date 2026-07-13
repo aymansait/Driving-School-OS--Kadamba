@@ -1,0 +1,215 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#0B0F14;
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+/* ==========================================
+ PAGE
+========================================== */
+
+.loginPage{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:25px;
+}
+
+/* ==========================================
+ CARD
+========================================== */
+
+.loginCard{
+  width:min(420px,100%);
+  background:#141B24;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:22px;
+  padding:40px 30px;
+  text-align:center;
+  box-shadow:0 20px 45px rgba(0,0,0,.35);
+}
+
+/* ==========================================
+ LOGO
+========================================== */
+
+.logo{
+  width:110px;
+  display:block;
+  margin:0 auto 20px;
+}
+
+/* ==========================================
+ TEXT
+========================================== */
+
+.loginCard h1{
+  font-size:2.1rem;
+  letter-spacing:3px;
+  margin-bottom:6px;
+}
+
+.loginCard h2{
+  font-size:1.25rem;
+  margin-bottom:18px;
+  color:white;
+}
+
+.subtitle{
+  color:#94A3B8;
+  line-height:1.6;
+  margin-bottom:28px;
+  font-size:.95rem;
+}
+
+/* ==========================================
+ INPUT
+========================================== */
+
+.inputGroup{
+  text-align:left;
+  margin-bottom:24px;
+}
+
+.inputGroup label{
+  display:block;
+  margin-bottom:8px;
+  font-size:.9rem;
+  color:white;
+}
+
+.inputGroup input{
+  width:100%;
+  padding:14px 16px;
+  border-radius:12px;
+  border:1px solid #2E3948;
+  background:#1C2530;
+  color:white;
+  font-size:15px;
+  transition:.25s;
+}
+
+.inputGroup input:focus{
+  outline:none;
+  border-color:#3B82F6;
+}
+
+/* ==========================================
+ BUTTON
+========================================== */
+
+#loginButton{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  background:#3B82F6;
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.25s;
+}
+
+#loginButton:hover{
+  background:#2563EB;
+  transform:translateY(-2px);
+}
+
+/* ==========================================
+ ERROR
+========================================== */
+
+#errorMessage{
+  margin-top:18px;
+  min-height:20px;
+  color:#EF4444;
+  font-size:.9rem;
+}
+
+/* ==========================================
+ MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.loginCard{
+  padding:30px 22px;
+}
+
+.logo{
+  width:90px;
+}
+
+.loginCard h1{
+  font-size:1.8rem;
+}
+
+}
+/* ==========================================
+   LOGIN OPTIONS
+========================================== */
+
+.loginOptions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:-8px;
+  margin-bottom:26px;
+  gap:15px;
+}
+
+.rememberMe{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:.92rem;
+  color:#94A3B8;
+  cursor:pointer;
+}
+
+.rememberMe input{
+  width:16px;
+  height:16px;
+  cursor:pointer;
+}
+
+.linkButton{
+  background:none;
+  border:none;
+  color:#3B82F6;
+  cursor:pointer;
+  font-size:.9rem;
+  padding:0;
+  transition:.2s;
+}
+
+.linkButton:hover{
+  color:#60A5FA;
+  text-decoration:underline;
+}
+
+/* ==========================================
+ MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.loginOptions{
+  flex-direction:column;
+  align-items:flex-start;
+  gap:12px;
+}
+
+}

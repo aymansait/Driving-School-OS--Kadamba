@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kadamba Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <div id="overlay"></div>
+
+  <aside id="sidebar">
+    <div class="sidebarHeader">
+      <img src="https://raw.githubusercontent.com/aymansait/kadamba-driving--school/main/logo.png" class="sidebarLogo" alt="Kadamba Logo">
+      <h2>Kadamba</h2>
+      <p>Motor Driving School</p>
+    </div>
+    <nav>
+      <button class="navButton" data-page="dashboard">Dashboard</button>
+      <button class="navButton" data-page="enquiries">Enquiries</button>
+      <button class="navButton" data-page="students">Students</button>
+      <button class="navButton" data-page="requests">Lesson Requests</button>
+      <button class="navButton" data-page="schedule">Schedule</button>
+      <button class="navButton" data-page="archive">Archive</button>
+      <button class="navButton" data-page="settings">Settings</button>
+    </nav>
+  </aside>
+
+  <main id="mainContent">
+    <header id="appHeader">
+      <button id="menuButton">☰</button>
+      <div class="titleSection">
+        <h1>Kadamba Motor Driving School</h1>
+        <p id="pageTitle">Dashboard</p>
+      </div>
+      <img src="https://raw.githubusercontent.com/aymansait/kadamba-driving--school/main/logo.png" class="headerLogo" alt="Kadamba Logo">
+    </header>
+
+    <div class="searchContainer">
+      <input type="text" id="globalSearch" class="searchBar" placeholder="Search students, enquiries...">
+    </div>
+
+    <section id="dashboardPage">
+      <div class="stats">
+        <div class="stat">
+          <h2 id="bookingCount">0</h2>
+          <p>Enquiries</p>
+        </div>
+        <div class="stat">
+          <h2 id="studentCount">0</h2>
+          <p>Students</p>
+        </div>
+        <div class="stat">
+          <h2 id="todayCount">0</h2>
+          <p>Today's Lessons</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contentArea">
+      <div id="bookingList">
+        <p class="loading">Loading...</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="studentPopup" class="popupOverlay">
+    <div class="popup">
+      <h2>Create Student</h2>
+      <div class="popupGrid">
+        <label>Name
+          <input id="popupName" type="text" readonly>
+        </label>
+        <label>Phone
+          <input id="popupPhone" type="text" readonly>
+        </label>
+        <label>Password
+          <input id="popupPassword" type="text" placeholder="Enter student password">
+        </label>
+        <label>Vehicle
+          <input id="popupVehicle" type="text" readonly>
+        </label>
+        <label>Course
+          <select id="popupCourse">
+            <option value="LMV">LMV</option>
+            <option value="MCWG">MCWG</option>
+            <option value="LMV + MCWG">LMV + MCWG</option>
+          </select>
+        </label>
+        <label>Instructor
+          <input id="popupInstructor" type="text" placeholder="Optional">
+        </label>
+        <label>Total Lessons
+          <input id="popupLessons" type="number" value="21">
+        </label>
+        <label>Test Date
+          <input id="popupTestDate" type="date">
+        </label>
+        <label>Course Fee
+          <input id="popupFee" type="number" placeholder="0">
+        </label>
+        <label>Amount Paid
+          <input id="popupPaid" type="number" value="0">
+        </label>
+      </div>
+      <div class="popupButtons">
+        <button id="cancelStudent">Cancel</button>
+        <button id="createStudent">Create Student</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="lessonPopup" class="popupOverlay">
+    <div class="popup">
+      <h2>Lesson Details</h2>
+      <div class="popupGrid">
+        <label>Student
+          <input id="lessonStudent" readonly>
+        </label>
+        <label>Course
+          <input id="lessonCourse" readonly>
+        </label>
+        <label>Date
+          <input id="lessonDate" readonly>
+        </label>
+        <label>Time
+          <input id="lessonTime" readonly>
+        </label>
+        <label>Instructor
+          <input id="lessonInstructor" readonly>
+        </label>
+      </div>
+      <div class="popupButtons">
+        <button id="closeLesson">Close</button>
+        <button type="button" id="rescheduleLesson">Reschedule</button>
+        <button id="cancelLesson">Cancel Lesson</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="reschedulePopup" class="popupOverlay">
+    <div class="popup">
+      <h2>Reschedule Lesson</h2>
+      <p>Select Date</p>
+      <div id="rescheduleDates" class="buttonRow"></div>
+      <p style="margin-top:20px;">Available Time Slots</p>
+      <div id="rescheduleSlots" class="buttonRow"></div>
+      <div class="popupButtons">
+        <button id="closeReschedule">Close</button>
+        <button id="saveReschedule">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+
+</body>
+</html>

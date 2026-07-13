@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadamba • Student Portal</title>
+    <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+    <main class="portalPage">
+        <header class="brandHeader">
+            <div class="logoCenter">
+                <h1>KADAMBA</h1>
+            </div>
+            <p>Welcome, <span id="studentName">Student</span></p>
+        </header>
+
+        <section class="card">
+            <h2 class="cardTitle">Course Progress</h2>
+            <div class="progressBar">
+                <div id="progressFill" class="progressFill"></div>
+            </div>
+            <p id="progressText">0 / 21 Lessons Completed</p>
+        </section>
+
+        <section class="card">
+            <h2 class="cardTitle">Next Lesson</h2>
+            <div id="lessonInfo" class="contentBlock">No lesson scheduled.</div>
+            <div class="buttonArea">
+                <button id="openRequestPopup" class="primaryBtn">Request Lesson</button>
+                <p id="requestStatus" class="statusLabel">Status: None</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="cardTitle">Instructor Notes</h2>
+            <div id="notesDisplay" class="contentBlock">No notes available.</div>
+        </section>
+
+        <section class="card">
+            <h2 class="cardTitle">Payment Summary</h2>
+            <div class="infoRow">Course Fee: <span id="fee">—</span></div>
+            <div class="infoRow">Amount Paid: <span id="paid">—</span></div>
+            <div class="infoRow">Remaining: <span id="remaining">—</span></div>
+            <div class="infoRow">Status: <strong id="payStatus">—</strong></div>
+        </section>
+
+        <section class="card">
+            <h2 class="cardTitle">Contact Instructor</h2>
+            <div class="buttonArea">
+                <a id="callBtn" href="#" class="secondaryBtn" style="text-decoration: none; text-align: center;">Call Instructor</a>
+                <a id="whatsappBtn" href="#" class="primaryBtn" style="text-decoration: none; text-align: center;">WhatsApp Instructor</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="requestPopup" class="popupOverlay">
+        <div class="popup">
+            <h3>Request Lesson</h3>
+            
+            <p>Step 1: Choose a Date</p>
+            <div id="dateContainer" class="buttonRow"></div>
+            
+            <p style="margin-top: 15px;">Step 2: Available Slots</p>
+            <div id="slotContainer" class="buttonRow" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"></div>
+            
+            <div id="confirmArea" style="margin-top: 20px;"></div>
+            
+            <button id="closeRequest" class="secondaryBtn" style="width: 100%; margin-top: 15px;">Cancel</button>
+        </div>
+    </div>
+
+    <script type="module" src="portal.js"></script>
+</body>
+</html>

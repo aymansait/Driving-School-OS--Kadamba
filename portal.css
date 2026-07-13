@@ -1,0 +1,120 @@
+/* ==========================================================
+   RESET & CORE
+   ========================================================== */
+   * { margin: 0; padding: 0; box-sizing: border-box; }
+   body { 
+       background: #0B0F14; 
+       color: #FFFFFF; 
+       font-family: Arial, Helvetica, sans-serif; 
+       padding: 20px; 
+       line-height: 1.5;
+   }
+   
+   /* ==========================================================
+      HEADER
+      ========================================================== */
+   .brandHeader { text-align: center; margin-bottom: 30px; }
+   .logoCenter h1 { font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 5px; }
+   .brandHeader p { color: #94A3B8; font-size: 0.95rem; }
+   
+   /* ==========================================================
+      CARDS
+      ========================================================== */
+   .card { 
+       background: #141B24; 
+       border: 1px solid rgba(255,255,255,.06); 
+       border-radius: 18px; 
+       padding: 20px; 
+       margin-bottom: 20px; 
+       max-width: 600px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+   .cardTitle { 
+       font-size: 1.1rem; 
+       margin-bottom: 15px; 
+       border-bottom: 1px solid rgba(255,255,255,0.06); 
+       padding-bottom: 10px; 
+       color: #FFFFFF;
+   }
+   
+   /* ==========================================================
+      PROGRESS BAR
+      ========================================================== */
+   .progressBar { background: #1C2530; height: 12px; border-radius: 6px; overflow: hidden; margin: 10px 0; }
+   .progressFill { background: #22C55E; height: 100%; width: 0%; transition: width 0.5s ease-in-out; }
+   
+   /* ==========================================================
+      BUTTONS
+      ========================================================== */
+   .buttonArea { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+   .primaryBtn, .secondaryBtn { 
+       padding: 12px; 
+       border-radius: 10px; 
+       border: none; 
+       font-weight: 600; 
+       cursor: pointer;
+       text-align: center;
+       transition: 0.2s;
+   }
+   .primaryBtn { background: #3B82F6; color: white; }
+   .primaryBtn:hover { background: #2563EB; }
+   .secondaryBtn { background: #475569; color: white; }
+   .secondaryBtn:hover { background: #334155; }
+   
+   /* ==========================================================
+      POPUP
+      ========================================================== */
+   .popupOverlay { 
+       display: none; 
+       position: fixed; 
+       inset: 0; 
+       background: rgba(0,0,0,0.8); 
+       align-items: center; 
+       justify-content: center; 
+       z-index: 1000;
+   }
+   .popupOverlay.active { display: flex; }
+   .popup { 
+       background: #141B24; 
+       padding: 25px; 
+       border-radius: 18px; 
+       width: 90%; 
+       max-width: 400px;
+       border: 1px solid rgba(255,255,255,0.06);
+   }
+   
+   /* Scheduling Buttons (Date/Slots) */
+   .buttonRow { 
+       display: flex; 
+       gap: 8px; 
+       margin: 10px 0; 
+       flex-wrap: wrap; 
+   }
+   
+   #dateContainer button, #slotContainer button {
+       padding: 10px 15px;
+       border-radius: 8px;
+       border: 1px solid #334155;
+       background: #1C2530;
+       color: #fff;
+       cursor: pointer;
+       font-size: 0.9rem;
+       transition: 0.2s;
+       flex: 1;
+   }
+   
+   #dateContainer button:hover, #slotContainer button:hover {
+       background: #3B82F6;
+       border-color: #3B82F6;
+   }
+   
+   #dateContainer button.active { background: #3B82F6; }
+   
+   /* ==========================================================
+      UTILITY
+      ========================================================== */
+   .infoRow { margin-bottom: 8px; color: #94A3B8; }
+   .statusLabel { font-size: 0.85rem; color: #64748B; text-align: center; margin-top: 5px; }
+   .contentBlock { color: #94A3B8; font-size: 0.95rem; }
+   

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadamba • Student Login</title>
+
+    <link rel="stylesheet" href="student-login.css">
+</head>
+<body>
+
+<main class="loginPage">
+
+    <div class="loginCard">
+
+        <img
+            src="https://raw.githubusercontent.com/aymansait/kadamba-driving--school/main/logo.png"
+            class="logo"
+            alt="Kadamba Logo">
+
+        <h1>KADAMBA</h1>
+
+        <h2>Student Portal</h2>
+
+        <p class="subtitle">
+            Welcome back!<br>
+            Enter your registered phone number to continue.
+        </p>
+
+        <div class="inputGroup">
+
+          <label for="phoneNumber">
+              Phone Number
+          </label>
+      
+          <input
+              type="tel"
+              id="phoneNumber"
+              placeholder="Enter your registered phone number">
+      
+      </div>
+      
+      <div class="inputGroup">
+      
+          <label for="password">
+              Password
+          </label>
+      
+          <input
+              type="password"
+              id="password"
+              placeholder="Enter your password">
+      
+      </div>
+      
+      <div class="loginOptions">
+      
+          <label class="rememberMe">
+      
+              <input
+                  type="checkbox"
+                  id="rememberMe">
+      
+              Remember Me
+      
+          </label>
+      
+          <button
+              type="button"
+              id="forgotPassword"
+              class="linkButton">
+      
+              Forgot Password?
+      
+          </button>
+      
+      </div>
+
+        <button id="loginButton">
+            Continue
+        </button>
+
+        <p id="errorMessage"></p>
+
+    </div>
+
+</main>
+
+<script type="module" src="student-login.js"></script>
+
+</body>
+</html>

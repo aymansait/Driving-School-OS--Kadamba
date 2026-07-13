@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadamba • Student Profile</title>
+    <link rel="stylesheet" href="student.css">
+    <!-- Ensure your admin.css is also linked here to style the popup -->
+    <link rel="stylesheet" href="admin.css"> 
+</head>
+<body>
+
+<main class="profilePage">
+    <section class="brandHeader">
+        <div class="brandTop">
+            <button id="backButton" class="backArrow" title="Back to Students">←</button>
+            <div class="brandText">
+                <h1>KADAMBA</h1>
+                <p>Student Profile</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="profileHeader">
+        <div class="studentPhoto">
+            <img id="studentPhoto" src="https://placehold.co/140x140" alt="Student Photo">
+        </div>
+        <h2 id="studentName">Loading...</h2>
+    </section>
+
+    <section class="profileCard">
+        <h2>Student Details</h2>
+        <div class="studentInfo">
+            <div class="infoRow"><span class="infoLabel">Phone</span><span class="separator">:</span><span id="studentPhone">—</span></div>
+            <div class="infoRow"><span class="infoLabel">Vehicle</span><span class="separator">:</span><span id="studentVehicle">—</span></div>
+            <div class="infoRow"><span class="infoLabel">Course</span><span class="separator">:</span><span id="studentCourse">—</span></div>
+            <div class="infoRow"><span class="infoLabel">Instructor</span><span class="separator">:</span><span id="studentInstructor">—</span></div>
+            <div class="infoRow"><span class="infoLabel">Total Lessons</span><span class="separator">:</span><span id="totalLessons">21</span></div>
+            <div class="infoRow"><span class="infoLabel">Test Date</span><span class="separator">:</span><span id="studentTestDate">—</span></div>
+        </div>
+        <button id="editStudent">Edit Student</button>
+    </section>
+
+    <section class="profileCard">
+        <h2>Course Progress</h2>
+        <div class="progressBar"><div id="progressFill" class="progressFill"></div></div>
+        <p id="progressText">0 / 21 Lessons Completed</p>
+        <hr>
+        <div class="infoRow"><span class="infoLabel">Next Lesson</span><span class="separator">:</span><span id="nextLesson">Lesson 1</span></div>
+        <div class="infoRow"><span class="infoLabel">Status</span><span class="separator">:</span><span id="courseStatus">In Progress</span></div>
+        <button id="completeLesson">Mark Lesson Complete</button>
+        <button id="completeCourse" style="display:none; margin-top:12px;">Complete Course</button>
+    </section>
+
+    <section class="profileCard">
+        <h2>Instructor Notes</h2>
+        <textarea id="notes" placeholder="Write notes about today's lesson..."></textarea>
+        <button id="saveNotes">Save Notes</button>
+    </section>
+
+    <section class="profileCard">
+        <h2>Payment Information</h2>
+        <div class="infoRow"><span class="infoLabel">Course Fee</span><span class="separator">:</span><strong id="courseFee">—</strong></div>
+        <div class="infoRow"><span class="infoLabel">Paid</span><span class="separator">:</span><strong id="amountPaid">—</strong></div>
+        <div class="infoRow"><span class="infoLabel">Remaining</span><span class="separator">:</span><strong id="amountRemaining">—</strong></div>
+        <div class="infoRow"><span class="infoLabel">Status</span><span class="separator">:</span><strong id="paymentStatus">—</strong></div>
+        <button id="recordPayment">Record Payment</button>
+    </section>
+</main>
+
+<!-- ==========================================
+  SHARED STUDENT POPUP 
+========================================== -->
+<div id="studentPopup" class="popupOverlay">
+  <div class="popup">
+    <h2>Create Student</h2>
+    <div class="popupGrid">
+      <label>Name <input id="popupName" type="text"></label>
+      <label>Phone <input id="popupPhone" type="text"></label>
+      <label>Vehicle <input id="popupVehicle" type="text"></label>
+      <label>Course
+        <select id="popupCourse">
+          <option value="LMV">LMV</option>
+          <option value="MCWG">MCWG</option>
+          <option value="LMV + MCWG">LMV + MCWG</option>
+        </select>
+      </label>
+      <label>Instructor <input id="popupInstructor" type="text"></label>
+      <label>Total Lessons <input id="popupLessons" type="number" value="21"></label>
+      <label>Test Date <input id="popupTestDate" type="date"></label>
+      <label>Course Fee <input id="popupFee" type="number"></label>
+      <label>Amount Paid <input id="popupPaid" type="number"></label>
+    </div>
+    <div class="popupButtons">
+      <button id="cancelStudent">Cancel</button>
+      <button id="createStudent">Create Student</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="student.js"></script>
+</body>
+</html>
