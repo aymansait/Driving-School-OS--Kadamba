@@ -325,3 +325,64 @@ hr {
     top: 0; /* Slight adjustment for mobile font sizing */
   }
 }
+/* ==========================================
+   STUDENT MANAGEMENT
+========================================== */
+
+.dangerZone p{
+
+  color:var(--muted);
+
+  margin-bottom:24px;
+
+  line-height:1.6;
+
+}
+
+.dangerButtons{
+
+  display:flex;
+
+  gap:16px;
+
+  margin-top:20px;
+
+}
+
+#archiveStudent{
+
+  background:#374151;
+
+  color:white;
+
+}
+
+#archiveStudent:hover{
+
+  background:#4B5563;
+
+}
+
+#deleteStudent{
+
+  background:#DC2626;
+
+  color:white;
+
+}
+
+#deleteStudent:hover{
+
+  background:#B91C1C;
+
+}
+
+@media(max-width:768px){
+
+  .dangerButtons{
+
+      flex-direction:column;
+
+  }
+
+}
